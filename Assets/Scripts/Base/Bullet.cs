@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
+public class Bullet : Part {
     
-    public float damage;
-    public float speed;
+    public float damage = 1;
+    public float speed = 1;
 
-    public float lifeTime;
+    public float lifeTime = 5;
 
     void Start(){
         TimeOver();
@@ -19,14 +19,10 @@ public class Bullet : MonoBehaviour {
         other.gameObject.GetComponent<Part>().TakeDamage(damage);
     }
 
-    public virtual void Move(){
-
-    }
+    public virtual void Move(){}
 
     void FixedUpdate(){
         Move();
     }
-
-
     
 }
